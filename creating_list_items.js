@@ -71,9 +71,9 @@ async function createOrderListItemU(i, orderId, value, len) {
     let status = value[0];
     let products = value[1];
     let counts = value[2];
-    // let num = i + 1;
-    // let content = '#' + num + ' ';
-    let content = '• ';
+    let num = i + 1;
+    let content = '#' + num + ' ';
+    // let content = '• ';
     for (let j = 0; j < products.length - 1; ++j) {
         content += products[j] + ' ' + counts[j] + ', ';
     }
@@ -92,9 +92,9 @@ async function createOrderListItemB(i, orderId, value, len) {
     let status = value[1];
     let products = value[2];
     let counts = value[3];
-    // let num = i + 1;
-    // let content = '#' + num + ' ';
-    let h2Content = '• ';
+    let num = i + 1;
+    let h2Content = '#' + num + ' ';
+    // let h2Content = '• ';
     for (let j = 0; j < products.length - 1; ++j) {
         h2Content += products[j] + ' ' + counts[j] + ', ';
     }
