@@ -41,7 +41,7 @@ async function showCatalog() {
   if (responceJSON == 500) {
     document.getElementById('loader').style.display = 'none';
   } else if (responceJSON == null) {
-    alert('Responce error');
+    alert('Error');
   } else {
     let promiseArray = new Array(responceJSON.length);
     for (let i = 0; i < responceJSON.length; ++i) {
@@ -66,7 +66,7 @@ async function showIngredients() {
     if (responceJSON == 500) {
       document.getElementById('loader').style.display = 'none';
     } else if (responceJSON == null) {
-      alert('Responce error');
+      alert('Error');
     } else {
       let promiseArray = new Array(responceJSON.length);
       for (let i = 0; i < responceJSON.length; ++i) {
@@ -102,7 +102,7 @@ async function showOrders(isAll) {
     if (responceJSON == 500) {
       document.getElementById('loader').style.display = 'none';
     } else if (responceJSON == null) {
-      alert('Responce error');
+      alert('Error');
     } else {
       let orders;
       if (isAll) {

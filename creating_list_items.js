@@ -13,6 +13,7 @@ function createDiv(i, j, h2content, p, label) {
     h2.textContent = h2content;
     description.appendChild(h2);
     if (p != null) {
+        p.id = 'sub' + i;
         description.appendChild(p);
     }
     if (label != null) {
@@ -93,11 +94,11 @@ async function createOrderListItemB(i, orderId, value, len) {
     let counts = value[3];
     // let num = i + 1;
     // let content = '#' + num + ' ';
-    let content = '• ';
+    let h2Content = '• ';
     for (let j = 0; j < products.length - 1; ++j) {
-        content += products[j] + ' ' + counts[j] + ', ';
+        h2Content += products[j] + ' ' + counts[j] + ', ';
     }
-    content += products[products.length - 1] + ' ' + counts[products.length - 1];
+    h2Content += products[products.length - 1] + ' ' + counts[products.length - 1];
     let p = document.createElement('p');
     let ingredients = new Map();
     for (let j = 0; j < products.length; ++j) {
@@ -117,17 +118,17 @@ async function createOrderListItemB(i, orderId, value, len) {
             }
         }
     }
-    content = '';
+    let pContent = '';
     let j = 0;
     for (var [name, count] of ingredients) {
         if (j == ingredients.size - 1) {
-            content += name + ' ' + count;
+            pContent += name + ' ' + count;
         } else {
-            content += name + ' ' + count + ', ';
+            pContent += name + ' ' + count + ', ';
         }
         ++j;
     }
-    p.textContent = content;
+    p.textContent = pContent;
     let label = document.createElement('label');
     if (status == false) {
         label.className = 'order_status underline';
@@ -140,7 +141,7 @@ async function createOrderListItemB(i, orderId, value, len) {
         label.className = 'order_status';
         label.textContent = 'Completed';
     }
-    return createDiv(i, len - 1, content, p, label);
+    return createDiv(i, len - 1, h2Content, p, label);
 }
 
 function changeCartState(productId, amountInputId) {
