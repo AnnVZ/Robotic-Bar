@@ -57,7 +57,7 @@ async function showCatalog() {
 
 async function showIngredients() {
   if (getUserRole() != 'bartender') {
-    window.location.href = 'index.html';
+    window.location.href = '/index.html';
   } else {
     showCart();
     let responceJSON = await getJSON(
@@ -89,7 +89,7 @@ function showCart() {
 async function showOrders(isAll) {
   let role = getUserRole();
   if ((role != 'bartender' && isAll) || (role != 'user' && !isAll)) {
-    window.location.href = 'index.html';
+    window.location.href = '/index.html';
   } else {
     let responceJSON;
     if (isAll) {

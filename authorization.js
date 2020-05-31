@@ -50,7 +50,7 @@ async function submitLogin(form) {
                 );
             }
             setCookie('name', fName + sName);
-            window.location.href = 'catalog.html';
+            window.location.href = '/catalog.html';
         }
     }
 }
