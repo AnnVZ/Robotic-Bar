@@ -15,7 +15,7 @@ async function getJSON(url) {
 async function serveUser(orderId) {
   document.getElementById(orderId).innerHTML = '<div class="submit_loader"></div>';
   let responce = await fetch(
-    'http://robotbarwrite.azurewebsites.net/api/order/' + orderId + '?',
+    'https://robotbarwrite.azurewebsites.net/api/order/' + orderId + '?',
     {
       method: 'POST'
     }
@@ -53,7 +53,7 @@ async function orderProduct(i, isUser, orderId, name, amount, login) {
   let responce;
   if (isUser) {
     responce = await fetch(
-      'http://robotbarwrite.azurewebsites.net/api/makeOrder',
+      'https://robotbarwrite.azurewebsites.net/api/makeOrder',
       {
         method: 'POST',
         headers: {
@@ -64,7 +64,7 @@ async function orderProduct(i, isUser, orderId, name, amount, login) {
     );
   } else {
     responce = await fetch(
-      'http://robotbarwrite.azurewebsites.net/api/updateingredientsfromstore',
+      'https://robotbarwrite.azurewebsites.net/api/updateingredientsfromstore',
       {
         method: 'POST',
         headers: {

@@ -37,7 +37,7 @@ async function createCatalogItem(i, json, isIngredient) {
         }
     } else {
         let responceJSON = await getJSON(
-            'http://robotbar.azurewebsites.net/api/product?name=' + json['name']
+            'https://robotbar.azurewebsites.net/api/product?name=' + json['name']
         );
         if (responceJSON == 500) {
         } else if (responceJSON != null) {
@@ -103,7 +103,7 @@ async function createOrderListItemB(i, orderId, value, len) {
     let ingredients = new Map();
     for (let j = 0; j < products.length; ++j) {
         let responceJSON = await getJSON(
-            'http://robotbar.azurewebsites.net/api/product?name=' + products[j]
+            'https://robotbar.azurewebsites.net/api/product?name=' + products[j]
         );
         if (responceJSON == 500) {
         } else if (responceJSON != null) {

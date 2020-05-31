@@ -11,7 +11,7 @@ async function submitLogin(form) {
     document.getElementById('login_loader').style.display = 'block';
     document.getElementById('login_button').value = '';
     let responceJSON = await getJSON(
-        'http://robotbar.azurewebsites.net/api/LoginningUser?login=' +
+        'https://robotbar.azurewebsites.net/api/LoginningUser?login=' +
         login +
         '&password=' +
         password
@@ -50,7 +50,7 @@ async function submitLogin(form) {
                 );
             }
             setCookie('name', fName + sName);
-            window.location.href = 'https://annvz.github.io/Robotic-Bar/catalog.html';
+            window.location.href = '/catalog.html';
         }
     }
 }

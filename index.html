@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <title>Robotic Bar</title>
     <link rel="stylesheet" href="css/main_styles.css" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <script src='authorization.js'></script>
@@ -17,29 +16,29 @@
 <body onload="showMenu(); showUserInfo()">
     <header>
         <nav class="menu" id="menu">
-            <a class="label" href="https://annvz.github.io/Robotic-Bar/index.html">Robotic Bar</a>
+            <a class="label" href="/index.html">Robotic Bar</a>
             <ul class="menu_list">
                 <li class="menu_item">
-                    <a href="https://annvz.github.io/Robotic-Bar/index.html">Home</a>
+                    <a href="/index.html">Home</a>
                 </li>
                 <li class="menu_item">
-                    <a href="https://annvz.github.io/Robotic-Bar/catalog.html">Catalog</a>
+                    <a href="/catalog.html">Catalog</a>
                 </li>
                 <li class="menu_item" id="user_orders">
-                    <a href="https://annvz.github.io/Robotic-Bar/user_orders.html">My Orders</a>
+                    <a href="/user_orders.html">My Orders</a>
                 </li>
                 <li class="menu_item" id="bar_orders">
-                    <a href="https://annvz.github.io/Robotic-Bar/bar_orders.html">Orders</a>
+                    <a href="/bar_orders.html">Orders</a>
                 </li>
                 <li class="menu_item" id="ingredients">
-                    <a href="https://annvz.github.io/Robotic-Bar/ingredients.html">Ingredients</a>
+                    <a href="/ingredients.html">Ingredients</a>
                 </li>
                 <li class="menu_item underline" id="log_in"
                     onclick="changeAuthorizationFormDisplay('login_form', 'block')">
                     Log in
                 </li>
                 <li class="menu_item" id="log_out" onclick="logOut()">
-                    <a href="https://annvz.github.io/Robotic-Bar/index.html">Log Out</a>
+                    <a href="/index.html">Log Out</a>
                 </li>
             </ul>
         </nav>
@@ -143,7 +142,7 @@
 
     <div id="login_form" class="start_form">
         <img class="mini_img" src="img/cross.png" alt="" onclick="changeAuthorizationFormDisplay('login_form', 'none')">
-        <form action="https://annvz.github.io/Robotic-Bar/index.html" onsubmit="submitLogin(this); return false">
+        <form action="/index.html" onsubmit="submitLogin(this); return false">
             <p class="input_name_p">Login</p>
             <input class="text_input" name="login" type="text" id="login" maxlength="25" required spellcheck="false"
                 autocomplete="off">
@@ -171,7 +170,7 @@
     <div id="signup_form" class="start_form">
         <img class="mini_img" src="img/cross.png" alt=""
             onclick="changeAuthorizationFormDisplay('signup_form', 'none')">
-        <form action="https://annvz.github.io/Robotic-Bar/index.html" onsubmit="submitSignup(this); return false">
+        <form action="/index.html" onsubmit="submitSignup(this); return false">
             <p class="input_name_p">First Name</p>
             <input class="text_input" name="fname" type="text" id="user_f_name" maxlength="25" required
                 spellcheck="false" autocomplete="off">
