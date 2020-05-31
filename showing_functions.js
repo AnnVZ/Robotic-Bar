@@ -94,10 +94,10 @@ async function showOrders(isAll) {
     let responceJSON;
     if (isAll) {
       responceJSON = await getJSON(
-        'http://robotbar.azurewebsites.net/api/GetAllOrders?code=alEQDKgW/FxmB284LEoFzd7s3kJkHd/5SwUvpnDeYFZeMgvlViqkhQ=='
+        'https://robotbar.azurewebsites.net/api/GetAllOrders?code=alEQDKgW/FxmB284LEoFzd7s3kJkHd/5SwUvpnDeYFZeMgvlViqkhQ=='
       );
     } else {
-      responceJSON = await getJSON('http://robotbar.azurewebsites.net/api/orders/' + getCookie('login'));
+      responceJSON = await getJSON('https://robotbar.azurewebsites.net/api/orders/' + getCookie('login'));
     }
     if (responceJSON == 500) {
       document.getElementById('loader').style.display = 'none';
