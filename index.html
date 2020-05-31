@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Robotic Bar</title>
+    <link rel="stylesheet" href="css/main_styles.css" />
+</head>
+
+<script src='authorization.js'></script>
+<script src='cookies_setup.js'></script>
+<script src='showing_functions.js'></script>
+<script src='form_manipulating.js'></script>
+<script src='getting_posting.js'></script>
+
+<body onload="showMenu(); showUserInfo()">
+    <header>
+        <nav class="menu" id="menu">
+            <a class="label" href="index.html">Robotic Bar</a>
+            <ul class="menu_list">
+                <li class="menu_item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="menu_item">
+                    <a href="catalog.html">Catalog</a>
+                </li>
+                <li class="menu_item" id="user_orders">
+                    <a href="user_orders.html">My Orders</a>
+                </li>
+                <li class="menu_item" id="bar_orders">
+                    <a href="bar_orders.html">Orders</a>
+                </li>
+                <li class="menu_item" id="ingredients">
+                    <a href="ingredients.html">Ingredients</a>
+                </li>
+                <li class="menu_item underline" id="log_in"
+                    onclick="changeAuthorizationFormDisplay('login_form', 'block')">
+                    Log in
+                </li>
+                <li class="menu_item" id="log_out" onclick="logOut()">
+                    <a href="index.html">Log Out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper" id="wrapper">
+        <div class="identificator" id="identificator">
+            <!-- Anton Ptushkin<br>• customer mode -->
+        </div>
+    </div>
+
+    <section>
+        <div class="feature" id="feature1">
+            <h1>
+                1. Visit our online Catalog
+            </h1>
+            <p>
+                In Catalog you can find products for all <br>tastes. We offer you a few dozens <br>of products of the
+                best quality.
+            </p>
+        </div>
+        <div class="feature" id="feature2">
+            <h1>
+                2. Choose products you want
+            </h1>
+            <p>
+                You can go over the list of ingredients for <br>every product consists. All ingredients <br>are of the
+                highest
+                freshness.
+            </p>
+        </div>
+        <div class="feature" id="feature3">
+            <h1>
+                3. Make an order
+            </h1>
+            <p>
+                You just need one click to send an order to <br>bartender, and the order will be ready <br>to pick up in
+                a few minutes.
+            </p>
+        </div>
+        <div class="feature" id="feature4">
+            <h1>
+                4. Pick up your order
+            </h1>
+            <p>
+                You can join our platform if you are a bartender<br> or a storekeeper too. Registration <br>is available
+                to all.
+            </p>
+        </div>
+
+        <script src="leader-line.min.js"></script>
+        <script>
+            new LeaderLine(
+                LeaderLine.pointAnchor(document.getElementById("feature1"), { x: "100%", y: "50%" }),
+                LeaderLine.pointAnchor(document.getElementById("feature2"), { x: "50%", y: 0 }),
+                {
+                    color: "rgba(255, 255, 255, 0.7)",
+                    size: 2.5,
+                    endPlugColor: "rgba(255, 255, 255, 1)",
+                    endPlugSize: 2,
+                    outline: true,
+                    outlineColor: "white",
+                    startSocket: "bottom",
+                    endSocket: "top"
+                }
+            );
+            new LeaderLine(
+                LeaderLine.pointAnchor(document.getElementById("feature2"), { x: 0, y: "50%" }),
+                LeaderLine.pointAnchor(document.getElementById("feature3"), { x: "50%", y: 0 }),
+                {
+                    color: "rgba(255, 255, 255, 0.7)",
+                    size: 2.5,
+                    endPlugColor: "rgba(255, 255, 255, 1)",
+                    endPlugSize: 2,
+                    outline: true,
+                    outlineColor: "white",
+                    startSocket: "bottom",
+                    endSocket: "top"
+                }
+            );
+            new LeaderLine(
+                LeaderLine.pointAnchor(document.getElementById("feature3"), { x: "100%", y: "50%" }),
+                LeaderLine.pointAnchor(document.getElementById("feature4"), { x: "50%", y: 0 }),
+                {
+                    color: "rgba(255, 255, 255, 0.7)",
+                    size: 2.5,
+                    endPlugColor: "rgba(255, 255, 255, 1)",
+                    endPlugSize: 2,
+                    outline: true,
+                    outlineColor: "white",
+                    startSocket: "bottom",
+                    endSocket: "top"
+                }
+            );
+        </script>
+    </section>
+
+    <div id="dark" class="dark background"
+        onclick="changeAuthorizationFormDisplay('login_form', 'none'); changeAuthorizationFormDisplay('signup_form', 'none')">
+    </div>
+
+    <div id="login_form" class="start_form">
+        <img class="mini_img" src="img/cross.png" alt="" onclick="changeAuthorizationFormDisplay('login_form', 'none')">
+        <form action="index.html" onsubmit="submitLogin(this); return false">
+            <p class="input_name_p">Login</p>
+            <input class="text_input" name="login" type="text" id="login" maxlength="25" required spellcheck="false"
+                autocomplete="off">
+            <p class="input_name_p">Password</p>
+            <input class="text_input" name="password" type="password" id="password" maxlength="25" minlength="4"
+                required autocomplete="off">
+            <div class="user_types_div">
+                <label class="user_type_label">
+                    <input class="user_type_radio" type="radio" name="type" value="user" checked>
+                    I am a customer
+                </label>
+                <label class="user_type_label">
+                    <input class="user_type_radio" type="radio" name="type" value="bartender">
+                    I am a bartender
+                </label>
+            </div>
+            <div class="login_loader_wrapper">
+                <div class="submit_loader" id="login_loader"></div>
+            </div>
+            <input class="button_start_input" type="submit" id="login_button" value="Log in">
+            <p class="additional" onclick="switchForms('login_form', 'signup_form')">or <u>sign up</u></p>
+        </form>
+    </div>
+
+    <div id="signup_form" class="start_form">
+        <img class="mini_img" src="img/cross.png" alt=""
+            onclick="changeAuthorizationFormDisplay('signup_form', 'none')">
+        <form action="index.html" onsubmit="submitSignup(this); return false">
+            <p class="input_name_p">First Name</p>
+            <input class="text_input" name="fname" type="text" id="user_f_name" maxlength="25" required
+                spellcheck="false" autocomplete="off">
+            <p class="input_name_p">Second Name</p>
+            <input class="text_input" name="sname" type="text" id="user_s_name" maxlength="25" required
+                spellcheck="false" autocomplete="off">
+            <p class="input_name_p">Login</p>
+            <input class="text_input" name="login" type="text" id="user_login" maxlength="25" required
+                spellcheck="false" autocomplete="off">
+            <p class="input_name_p">Password</p>
+            <input class="text_input" name="password" type="password" id="user_password" maxlength="25" minlength="4"
+                required autocomplete="off">
+            <p class="input_name_p">Repeat Password</p>
+            <input class="text_input" name="password_rep" type="password" id="user_password_rep" maxlength="25"
+                minlength="4" required autocomplete="off">
+            <div class="user_types_div">
+                <label class="user_type_label">
+                    <input class="user_type_radio" type="radio" name="type" value="user" checked>
+                    I am a customer
+                </label>
+                <label class="user_type_label">
+                    <input class="user_type_radio" type="radio" name="type" value="bartender">
+                    I am a bartender
+                </label>
+                <label class="user_type_label">
+                    <input class="user_type_radio" type="radio" name="type" value="storekeeper">
+                    I am a storekeeper
+                </label>
+            </div>
+            <div class="login_loader_wrapper">
+                <div class="submit_loader" id="login_loader"></div>
+            </div>
+            <input class="button_start_input" type="submit" id="signup_button" value="Sign up">
+            <p class="additional" onclick="switchForms('signup_form', 'login_form')">Already have an account? <u>Log
+                    in</u></p>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ingredients</title>
+    <link rel="stylesheet" href="css/main_styles.css" />
+</head>
+
+<script src='authorization.js'></script>
+<script src='cookies_setup.js'></script>
+<script src='showing_functions.js'></script>
+<script src='creating_list_items.js'></script>
+<script src='form_manipulating.js'></script>
+<script src='getting_posting.js'></script>
+
+<body onload="showIngredients(); showMenu(); showUserInfo()">
+    <header>
+        <nav class="menu" id="menu">
+            <a class="label" href="index.html">Robotic Bar</a>
+            <ul class="menu_list">
+                <li class="menu_item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="menu_item">
+                    <a href="catalog.html">Catalog</a>
+                </li>
+                <li class="menu_item" id="user_orders">
+                    <a href="user_orders.html">My Orders</a>
+                </li>
+                <li class="menu_item" id="bar_orders">
+                    <a href="bar_orders.html">Orders</a>
+                </li>
+                <li class="menu_item" id="ingredients">
+                    <a href="ingredients.html">Ingredients</a>
+                </li>
+                <li class="menu_item underline" id="log_in" onclick="changeAuthorizationFormDisplay('login_form', 'block')">
+                    Log in
+                </li>
+                <li class="menu_item" id="log_out" onclick="logOut()">
+                    <a href="index.html">Log Out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper" id="wrapper">
+        <div class="identificator" id="identificator">
+            <!-- Anton Ptushkin<br>• customer mode -->
+        </div>
+    </div>
+
+    <h1 class="page_name">Ingredients</h1>
+
+    <section class="light catalogue">
+        <form action="ingredients.html" onsubmit="handleOrder(false); return false;">
+            <div class="scroll" id="scroll">
+                <div class="loader_wrapper" id="loader_wrapper">
+                    <div class="loader" id="loader"></div>
+                </div>
+                <!-- <div class="catalogue_item not_first_item">
+                    <div class="catalogue_item_description">
+                        <h2 id="p2">Ham</h2>
+                        <p>Available amount: 0</p>
+                    </div>
+                    <label class="add_item_check">
+                        <input class="number" type="number" name="type2" id="2" placeholder="0" min="0" oninput="changeCartState('p2', '2')">
+                    </label>
+                </div> -->
+            </div>
+
+            <div class="current_order" id="current_order">
+                <h1 class="your_list_header">Your list:</h1>
+                <div class="your_list" id="your_list">
+                    <!-- <div class="your_list_item">Pizza<p>9</p></div> -->
+                    <p id="content">empty</p>
+                </div>
+                <div class="order_loader_wrapper">
+                    <div class="order_loader" id="order_loader"></div>
+                </div>
+                <input class="button_order" type="submit" id="order_button" value="Order">
+            </div>
+        </form>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Orders</title>
+    <link rel="stylesheet" href="css/main_styles.css" />
+</head>
+
+<script src='authorization.js'></script>
+<script src='cookies_setup.js'></script>
+<script src='showing_functions.js'></script>
+<script src='creating_list_items.js'></script>
+<script src='form_manipulating.js'></script>
+<script src='getting_posting.js'></script>
+<script src='mapping.js'></script>
+
+<body onload="showOrders(true); showMenu(); showUserInfo()">
+    <header>
+        <nav class="menu" id="menu">
+            <a class="label" href="index.html">Robotic Bar</a>
+            <ul class="menu_list">
+                <li class="menu_item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="menu_item">
+                    <a href="catalog.html">Catalog</a>
+                </li>
+                <li class="menu_item" id="bar_orders">
+                    <a href="bar_orders.html">Orders</a>
+                </li>
+                <li class="menu_item" id="ingredients">
+                    <a href="ingredients.html">Ingredients</a>
+                </li>
+                <li class="menu_item underline" id="log_in" onclick="changeAuthorizationFormDisplay('login_form', 'block')">
+                    Log in
+                </li>
+                <li class="menu_item" id="log_out" onclick="logOut()">
+                    <a href="index.html">Log Out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper" id="wrapper">
+        <div class="identificator" id="identificator">
+            <!-- Anton Ptushkin<br>• customer mode -->
+        </div>
+    </div>
+
+    <h1 class="page_name">Orders</h1>
+
+    <section class="light catalogue">
+        <div class="scroll" id="scroll">
+            <div class="loader_wrapper" id="loader_wrapper">
+                <div class="loader" id="loader"></div>
+            </div>
+            <!-- <div class="catalogue_item">
+                <div class="catalogue_item_description">
+                    <h2 id="p6">#6 Pizza, Salad</h2>
+                    <p>cheese 1, ham 1, tomato 1, potato 1</p>
+                </div>
+                <label class="order_status underline" onclick="serveUser(6)">
+                    Serve
+                </label>
+            </div>
+            <div class="catalogue_item not_first_item">
+                <div class="catalogue_item_description">
+                    <h2 id="p5">#5 Pizza, Salad</h2>
+                    <p>Cheese 1, Ham 1, Tomato 1, Potato 1</p>
+                </div>
+                <label class="order_status underline" onclick="serveUser(5)">
+                    Serve
+                </label>
+            </div>
+            <div class="catalogue_item not_first_item">
+                <div class="catalogue_item_description">
+                    <h2 id="p4">#4 Pizza, Salad</h2>
+                    <p>Cheese 1, Ham 1, Tomato 1, Potato 1</p>
+                </div>
+                <label class="order_status">
+                    Completed
+                </label>
+            </div> -->
+        </div>
+    </section>
+
+</body>
+
+</html>
